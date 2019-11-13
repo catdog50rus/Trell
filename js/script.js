@@ -1,3 +1,5 @@
+
+//создание новой карточки
 document
 	.querySelectorAll('.column')
 	.forEach(Column.process)
