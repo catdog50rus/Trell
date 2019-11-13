@@ -1,5 +1,6 @@
 const Column = {
     idCounter: 4,
+    
     // создание новой задачи
     process(columnElement) {
         const spanAction_addNote = columnElement.querySelector('[data-action-addNote]')

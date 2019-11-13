@@ -2,7 +2,7 @@ document
 	.querySelectorAll('.column')
 	.forEach(Column.process)
 
-//создание новой карточки	
+//создание новой колонки	
 document
 	.querySelector('[data-action-addColumn]')
 	.addEventListener('click', function (event) {
