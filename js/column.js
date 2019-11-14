@@ -13,6 +13,7 @@ const Column = {
             Note.idCounter++;
 
             columnElement.querySelector('[data-notes]').append(noteElement);
+            
             //редактируем задачу в новой карточке
             Note.edit(noteElement);
             noteElement.setAttribute('contenteditable', true);
@@ -23,16 +24,20 @@ const Column = {
         const headerElement = columnElement.querySelector('.column-header');
         Note.edit(headerElement);
 
-        columnElement.addEventListener('dragover', function (event) {
-            event.preventDefault();
-        });
+        columnElement.addEventListener('dragover', Column.dragOver);
 
-        columnElement.addEventListener('drop', function (event) {
-            if (Note.dragged) {
-                return columnElement.querySelector('[data-notes]').append(Note.dragged);
-            }
-        })
+        columnElement.addEventListener('drop', Column.drop());
 
+    },
+    
+    drop(event) {
+        if (Note.dragged) {
+            return columnElement.querySelector('[data-notes]').append(Note.dragged);
+        };
+    },
+    
+    dragOver(event) {
+        event.preventDefault();
     },
 
 };

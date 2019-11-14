@@ -21,7 +21,7 @@ document
 
 		Column.idCounter++;
 
-		document.querySelector('.column').append(columnElement);
+		document.querySelector('.columns').append(columnElement);
 		Column.process(columnElement);
 	});
 
